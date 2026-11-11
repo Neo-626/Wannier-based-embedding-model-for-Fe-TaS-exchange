@@ -26,7 +26,7 @@ the exchange interaction using the Lloyd formula.
 $$
 \mathcal H=-J\\mathbf e_1\cdot\mathbf e_2,
 \qquad
-J=\frac{\Omega_{\mathrm{AP}}-\Omega_{\mathrm{FM}}}{2}.
+J=\frac{\Omega_{\mathrm{AFM}}-\Omega_{\mathrm{FM}}}{2}.
 $$
 
 Positive $J$ favors parallel moments.
