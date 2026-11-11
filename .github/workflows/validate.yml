@@ -1,0 +1,33 @@
+name: Validate notebook
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository and input data
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Execute notebook
+        run: >-
+          python scripts/run_notebook.py
+          notebooks/wannier_embedding_exchange.ipynb
+          --output artifacts/wannier_embedding_exchange.executed.ipynb
+
+      - name: Upload executed notebook
+        uses: actions/upload-artifact@v4
+        with:
+          name: executed-notebook
+          path: artifacts/wannier_embedding_exchange.executed.ipynb

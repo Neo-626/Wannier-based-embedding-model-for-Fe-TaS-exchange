@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.ipynb text eol=lf
+# Preserve the byte identity of raw scientific inputs.
+data/**/wannier90*_hr.dat.gz -text -diff -merge
+data/**/POSCAR -text -diff -merge
+data/**/*.xyz -text -diff -merge
